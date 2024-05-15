@@ -35,11 +35,8 @@ public class AppSecurityConfig {
 		http.csrf(AbstractHttpConfigurer::disable)
 				.authorizeHttpRequests(authorize -> authorize.requestMatchers(WHITELISTED_URLS)
 						.permitAll().anyRequest().authenticated())
-	            .headers().frameOptions().disable()
-	            .and()
-	            .csrf().ignoringRequestMatchers("/h2-console/**")
-	            .and()
-				.sessionManagement(
+				.headers(headers -> headers.frameOptions().disable())
+				.csrf(csrf -> csrf.ignoringRequestMatchers(WHITELISTED_URLS)).sessionManagement(
 						session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
