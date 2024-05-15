@@ -1,8 +1,8 @@
-#spring-rest-api-with-jwt
+# spring-rest-api-with-jwt
 
-##Open-Api Specification URL: http://localhost:8080/swagger-ui/index.html
+## Open-Api Specification URL: http://localhost:8080/swagger-ui/index.html
 
-##H2-Console URL: http://localhost:8080/h2-console
+## H2-Console URL: http://localhost:8080/h2-console
 
 ## Authentication
 
